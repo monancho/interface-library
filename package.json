@@ -1,0 +1,27 @@
+{
+  "name": "interface-library-workspace",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.17.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:tokens": "corepack pnpm@10.17.1 --filter @interface-library/tokens build",
+    "storybook": "corepack pnpm@10.17.1 build:tokens && corepack pnpm@10.17.1 --filter @interface-library/storybook dev",
+    "docs": "corepack pnpm@10.17.1 build:tokens && corepack pnpm@10.17.1 --filter @interface-library/docs dev",
+    "build:storybook": "corepack pnpm@10.17.1 build:tokens && corepack pnpm@10.17.1 --filter @interface-library/storybook build",
+    "build:docs": "corepack pnpm@10.17.1 build:tokens && corepack pnpm@10.17.1 --filter @interface-library/docs build",
+    "build": "corepack pnpm@10.17.1 build:tokens && corepack pnpm@10.17.1 --filter @interface-library/storybook build && corepack pnpm@10.17.1 --filter @interface-library/docs build",
+    "check": "corepack pnpm@10.17.1 build:tokens && corepack pnpm@10.17.1 -r --if-present check",
+    "test": "corepack pnpm@10.17.1 build:tokens && node --test",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "3.0.1",
+    "typescript": "5.9.2"
+  }
+}

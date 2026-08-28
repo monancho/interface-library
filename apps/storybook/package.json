@@ -1,0 +1,21 @@
+{
+  "name": "@interface-library/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@interface-library/css": "workspace:*",
+    "@interface-library/fixtures": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/html-vite": "10.5.10",
+    "storybook": "10.5.10",
+    "typescript": "5.9.2",
+    "vite": "7.1.3"
+  }
+}

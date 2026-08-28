@@ -1,0 +1,85 @@
+@layer interface-library.component {
+  .pf-divider {
+    width: 100%;
+    height: var(--border-thin);
+    margin: 0;
+    border: 0;
+    background: var(--color-border-default);
+  }
+
+  .pf-action-link {
+    display: inline-flex;
+    min-height: var(--size-control);
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-border-default);
+    transition:
+      color var(--motion-duration-fast) var(--motion-easing-out),
+      text-decoration-color var(--motion-duration-fast) var(--motion-easing-out);
+  }
+
+  .pf-action-link:hover {
+    color: var(--color-text-link);
+    text-decoration-color: currentColor;
+  }
+
+  .pf-section-header {
+    display: grid;
+    max-width: var(--size-reading);
+    gap: var(--space-3);
+  }
+
+  .pf-section-header__title {
+    max-width: 20ch;
+    font-size: clamp(2rem, 4vw, var(--font-size-title));
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--font-line-height-tight);
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  .pf-section-header__description {
+    max-width: 65ch;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lead);
+  }
+
+  .pf-call-to-action {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--space-6);
+    align-items: end;
+    padding-block: clamp(var(--space-7), 8vw, var(--space-9));
+    border-block: var(--border-thin) solid var(--color-border-strong);
+  }
+
+  .pf-call-to-action__content {
+    display: grid;
+    max-width: var(--size-reading);
+    gap: var(--space-3);
+  }
+
+  .pf-call-to-action__title {
+    max-width: 18ch;
+    font-size: clamp(2.25rem, 6vw, 4.75rem);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .pf-call-to-action__description {
+    max-width: 60ch;
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 720px) {
+    .pf-call-to-action {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "color": {
+    "$type": "color",
+    "neutral": {
+      "0": { "$value": "#ffffff" },
+      "50": { "$value": "#f7f7f5" },
+      "100": { "$value": "#eeeeeb" },
+      "300": { "$value": "#c8c8c2" },
+      "600": { "$value": "#66665f" },
+      "800": { "$value": "#292927" },
+      "950": { "$value": "#111110" }
+    },
+    "accent": {
+      "500": { "$value": "#315ee7" },
+      "600": { "$value": "#244cc9" }
+    },
+    "surface": {
+      "canvas": { "$value": "{color.neutral.50}" },
+      "default": { "$value": "{color.neutral.0}" },
+      "subtle": { "$value": "{color.neutral.100}" },
+      "inverse": { "$value": "{color.neutral.950}" }
+    },
+    "text": {
+      "primary": { "$value": "{color.neutral.950}" },
+      "secondary": { "$value": "{color.neutral.600}" },
+      "inverse": { "$value": "{color.neutral.0}" },
+      "link": { "$value": "{color.accent.600}" }
+    },
+    "border": {
+      "default": { "$value": "{color.neutral.300}" },
+      "strong": { "$value": "{color.neutral.950}" },
+      "focus": { "$value": "{color.accent.500}" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "0": { "$value": "0px" },
+    "1": { "$value": "4px" },
+    "2": { "$value": "8px" },
+    "3": { "$value": "12px" },
+    "4": { "$value": "16px" },
+    "5": { "$value": "24px" },
+    "6": { "$value": "32px" },
+    "7": { "$value": "48px" },
+    "8": { "$value": "64px" },
+    "9": { "$value": "96px" }
+  },
+  "size": {
+    "$type": "dimension",
+    "content": { "$value": "1200px" },
+    "reading": { "$value": "720px" },
+    "control": { "$value": "44px" }
+  },
+  "radius": {
+    "$type": "dimension",
+    "small": { "$value": "4px" },
+    "medium": { "$value": "10px" },
+    "round": { "$value": "999px" }
+  },
+  "border": {
+    "$type": "dimension",
+    "thin": { "$value": "1px" }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": { "$value": ["ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "sans-serif"] },
+      "mono": { "$value": ["ui-monospace", "SFMono-Regular", "Consolas", "monospace"] }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 }
+    },
+    "size": {
+      "$type": "dimension",
+      "small": { "$value": "14px" },
+      "body": { "$value": "16px" },
+      "lead": { "$value": "20px" },
+      "title": { "$value": "40px" }
+    },
+    "lineHeight": {
+      "$type": "number",
+      "tight": { "$value": 1.15 },
+      "body": { "$value": 1.6 }
+    }
+  },
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "fast": { "$value": "120ms" },
+      "medium": { "$value": "220ms" }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "out": { "$value": [0.16, 1, 0.3, 1] }
+    }
+  }
+}

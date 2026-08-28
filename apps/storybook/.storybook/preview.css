@@ -1,0 +1,26 @@
+body {
+  min-height: 100vh;
+}
+
+.sb-frame {
+  padding-block: clamp(var(--space-6), 8vw, var(--space-9));
+}
+
+.sb-swatch {
+  min-height: 7rem;
+  padding: var(--space-4);
+  border: var(--border-thin) solid var(--color-border-default);
+  background: var(--swatch-color);
+}
+
+.sb-grid-item {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.sb-demo-surface {
+  min-height: var(--size-control);
+  padding: var(--space-4);
+  border: var(--border-thin) solid var(--color-border-default);
+  background: var(--color-surface-default);
+}

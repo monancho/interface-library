@@ -1,0 +1,8 @@
+@import '@interface-library/css/styles.css';
+
+:root {
+  --sl-color-accent-low: #e8edff;
+  --sl-color-accent: #315ee7;
+  --sl-color-accent-high: #172960;
+  --sl-font: var(--font-family-sans);
+}

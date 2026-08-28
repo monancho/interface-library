@@ -1,0 +1,60 @@
+@layer interface-library.reset, interface-library.base, interface-library.layout, interface-library.component;
+
+@layer interface-library.reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+}
+
+@layer interface-library.base {
+  :root {
+    color: var(--color-text-primary);
+    background: var(--color-surface-canvas);
+    font-family: var(--font-family-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    min-width: 320px;
+    font-size: var(--font-size-body);
+    line-height: var(--font-line-height-body);
+  }
+
+  ::selection {
+    color: var(--color-text-inverse);
+    background: var(--color-accent-600);
+  }
+
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-border-focus) 72%, transparent);
+    outline-offset: 3px;
+  }
+
+  a {
+    color: inherit;
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: var(--border-thin);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}

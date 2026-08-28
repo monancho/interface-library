@@ -1,0 +1,20 @@
+{
+  "name": "@interface-library/tokens",
+  "version": "0.0.0",
+  "description": "Framework-neutral design tokens in DTCG and CSS formats.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "files": ["dist", "tokens"],
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./source": "./tokens/index.json"
+  },
+  "scripts": {
+    "build": "style-dictionary build --config config.mjs"
+  },
+  "devDependencies": {
+    "style-dictionary": "5.1.1"
+  }
+}

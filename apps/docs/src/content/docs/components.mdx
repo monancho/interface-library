@@ -1,0 +1,54 @@
+---
+title: 컴포넌트
+description: CSS 기반의 범용 마크업 레시피입니다.
+---
+
+초기 공개 범위는 `Container`, `Stack`, `Divider`, `BorderGrid`,
+`SplitLayout`, `ActionLink`, `SectionHeader`, `CallToAction`입니다.
+
+각 레시피는 의미에 맞는 HTML 요소와 함께 사용하고, 내용은 사용하는
+서비스가 직접 제공합니다.
+
+## 레이아웃
+
+`Container`는 콘텐츠 폭과 반응형 여백을 정하고, `Stack`은 세로 간격을
+조절합니다.
+
+```html
+<main class="pf-container">
+  <div class="pf-stack">
+    <p>항목 01</p>
+    <p>항목 02</p>
+  </div>
+</main>
+```
+
+`SplitLayout`은 넓은 화면에서 두 열을 만들고 작은 화면에서는 한 열로
+전환합니다. `BorderGrid`는 같은 기준으로 목록을 배치합니다.
+
+## SectionHeader
+
+제목과 짧은 설명이 함께 반복되는 섹션 시작점에 사용합니다. 별도의
+eyebrow나 장식 문구는 기본 API에 포함하지 않습니다.
+
+```html
+<header class="pf-section-header">
+  <h2 class="pf-section-header__title">기본 제목</h2>
+  <p class="pf-section-header__description">짧은 설명입니다.</p>
+</header>
+```
+
+## CallToAction
+
+한 개의 명확한 다음 행동이 필요한 섹션에 사용합니다. 실제 서비스의
+연락처나 제품 문구는 컴포넌트가 제공하지 않습니다.
+
+```html
+<section class="pf-call-to-action">
+  <div class="pf-call-to-action__content">
+    <h2 class="pf-call-to-action__title">기본 제목</h2>
+    <p class="pf-call-to-action__description">짧은 설명입니다.</p>
+  </div>
+  <a class="pf-action-link" href="#action">확인</a>
+</section>
+```

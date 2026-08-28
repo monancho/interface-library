@@ -1,0 +1,38 @@
+@layer interface-library.layout {
+  .pf-container {
+    width: min(100% - (2 * clamp(var(--space-4), 4vw, var(--space-7))), var(--size-content));
+    margin-inline: auto;
+  }
+
+  .pf-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pf-stack-gap, var(--space-5));
+  }
+
+  .pf-split-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(var(--space-6), 6vw, var(--space-9));
+    align-items: var(--pf-split-align, start);
+  }
+
+  .pf-border-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--pf-grid-columns, 3), minmax(0, 1fr));
+    border-block-start: var(--border-thin) solid var(--color-border-strong);
+  }
+
+  .pf-border-grid > * {
+    min-width: 0;
+    padding: var(--space-5) 0;
+    border-block-end: var(--border-thin) solid var(--color-border-default);
+  }
+
+  @media (max-width: 720px) {
+    .pf-split-layout,
+    .pf-border-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
