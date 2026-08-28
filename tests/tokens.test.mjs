@@ -16,7 +16,7 @@ test('generated tokens contain usable CSS values', async () => {
 test('generated flat JSON contains the public token groups', async () => {
   const tokens = JSON.parse(await readFile(generatedJson, 'utf8'));
 
-  assert.ok('color.text.primary' in tokens);
-  assert.ok('space.5' in tokens);
-  assert.ok('font.family.sans' in tokens);
+  assert.equal(tokens.ColorTextPrimary, '#111110');
+  assert.equal(tokens.Space5, '24px');
+  assert.ok(Array.isArray(tokens.FontFamilySans));
 });
