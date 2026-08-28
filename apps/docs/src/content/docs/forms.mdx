@@ -1,0 +1,47 @@
+---
+title: 폼과 상태
+description: 입력, 선택, 동의와 상태 피드백을 구성하는 방법입니다.
+---
+
+폼 레시피는 시각 스타일과 접근 가능한 구조만 제공합니다. 제출 로직,
+검증 규칙, 보안 도구는 사용하는 서비스에서 결정합니다.
+
+## FormField
+
+레이블은 항상 입력 요소와 연결합니다. 도움말 또는 오류의 `id`를
+`aria-describedby`로 연결하고, 오류가 있으면 `aria-invalid="true"`를
+함께 설정합니다.
+
+```html
+<div class="pf-field">
+  <label class="pf-field__label" for="item-name">
+    항목 이름 <span class="pf-field__required" aria-hidden="true">*</span>
+  </label>
+  <input
+    class="pf-field__control"
+    id="item-name"
+    aria-describedby="item-error"
+    aria-invalid="true"
+    required
+  />
+  <p class="pf-field__error" id="item-error">입력한 내용을 확인하세요.</p>
+</div>
+```
+
+`select`와 `textarea`에도 같은 `pf-field__control` 클래스를 사용합니다.
+
+## Checkbox
+
+선택 영역 전체를 레이블로 감싸 작은 체크박스도 쉽게 누를 수 있게 합니다.
+
+```html
+<label class="pf-checkbox">
+  <input class="pf-checkbox__control" type="checkbox" />
+  <span class="pf-checkbox__label">필요한 내용을 확인했습니다.</span>
+</label>
+```
+
+## StatusMessage
+
+상태는 색만으로 구분하지 않습니다. 상태 표식, 제목, 설명을 함께 제공하고,
+동적으로 갱신되는 경우에만 적절한 live region을 바깥 구조에서 설정합니다.

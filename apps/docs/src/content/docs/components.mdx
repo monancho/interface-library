@@ -3,8 +3,9 @@ title: 컴포넌트
 description: CSS 기반의 범용 마크업 레시피입니다.
 ---
 
-초기 공개 범위는 `Container`, `Stack`, `Divider`, `BorderGrid`,
-`SplitLayout`, `ActionLink`, `SectionHeader`, `CallToAction`입니다.
+공개 범위는 레이아웃, 행동, 폼, 상태, 콘텐츠 목록을 위한 작은 CSS
+레시피로 구성됩니다. Storybook에서 각 상태와 반응형 동작을 확인할 수
+있습니다.
 
 각 레시피는 의미에 맞는 HTML 요소와 함께 사용하고, 내용은 사용하는
 서비스가 직접 제공합니다.
@@ -51,4 +52,14 @@ eyebrow나 장식 문구는 기본 API에 포함하지 않습니다.
   </div>
   <a class="pf-action-link" href="#action">확인</a>
 </section>
+```
+
+## Button과 ActionLink
+
+현재 화면에서 즉시 동작하는 행동은 `Button`, 다른 위치로 이동하는 행동은
+`ActionLink`를 사용합니다. 링크를 버튼처럼, 버튼을 링크처럼 바꾸지 않습니다.
+
+```html
+<button class="pf-button" type="button">확인</button>
+<a class="pf-action-link" href="#next">다음 항목</a>
 ```

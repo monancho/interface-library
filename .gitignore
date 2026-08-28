@@ -2,5 +2,7 @@ node_modules/
 dist/
 storybook-static/
 .astro/
+.playwright-cli/
+output/
 .DS_Store
 *.log

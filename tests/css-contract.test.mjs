@@ -16,6 +16,13 @@ const expectedSelectors = [
   '.pf-action-link',
   '.pf-section-header',
   '.pf-call-to-action',
+  '.pf-button',
+  '.pf-field',
+  '.pf-checkbox',
+  '.pf-status-message',
+  '.pf-content-card',
+  '.pf-index-list',
+  '.pf-inline-nav',
 ];
 
 test('CSS package exposes the documented recipe selectors', async () => {
