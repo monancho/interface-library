@@ -2,7 +2,6 @@
   "name": "@interface-library/css",
   "version": "0.0.0",
   "description": "Framework-neutral CSS foundations and component recipes.",
-  "license": "MIT",
   "sideEffects": ["*.css"],
   "files": ["src"],
   "exports": {

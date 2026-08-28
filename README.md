@@ -28,7 +28,3 @@ corepack pnpm docs
 Examples use short neutral state text only. Do not add organization names,
 product names, logos, real contact details, customer data, screenshots, or
 source-specific motion studies.
-
-## License
-
-MIT

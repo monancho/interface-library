@@ -2,7 +2,6 @@
   "name": "@interface-library/tokens",
   "version": "0.0.0",
   "description": "Framework-neutral design tokens in DTCG and CSS formats.",
-  "license": "MIT",
   "type": "module",
   "sideEffects": ["*.css"],
   "files": ["dist", "tokens"],
