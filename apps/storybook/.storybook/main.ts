@@ -6,6 +6,10 @@ const config: StorybookConfig = {
     name: '@storybook/html-vite',
     options: {},
   },
+  features: {
+    sidebarOnboardingChecklist: false,
+    menuOnboardingChecklist: false,
+  },
 };
 
 export default config;

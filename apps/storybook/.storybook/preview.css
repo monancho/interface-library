@@ -24,3 +24,55 @@ body {
   border: var(--border-thin) solid var(--color-border-default);
   background: var(--color-surface-default);
 }
+
+.sb-composition {
+  display: grid;
+  gap: clamp(var(--space-7), 10vw, var(--space-9));
+}
+
+.sb-composition__hero {
+  padding-block-end: clamp(var(--space-7), 8vw, var(--space-9));
+  border-block-end: var(--border-thin) solid var(--color-border-default);
+}
+
+.sb-composition__aside {
+  align-self: end;
+}
+
+.sb-form-composition {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  padding-block-start: var(--space-6);
+  border-block-start: var(--border-thin) solid var(--color-border-default);
+}
+
+.sb-form-composition__wide,
+.sb-form-composition__footer {
+  grid-column: 1 / -1;
+}
+
+.sb-form-composition__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-block-start: var(--space-4);
+}
+
+@media (max-width: 720px) {
+  .sb-form-composition {
+    grid-template-columns: 1fr;
+  }
+
+  .sb-form-composition__wide,
+  .sb-form-composition__footer {
+    grid-column: auto;
+  }
+
+  .sb-form-composition__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

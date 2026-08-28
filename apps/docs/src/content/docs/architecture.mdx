@@ -1,0 +1,36 @@
+---
+title: 구조
+description: 원본 토큰에서 공개 문서까지 이어지는 라이브러리 구조와 책임 경계입니다.
+---
+
+Interface Library는 특정 프레임워크의 컴포넌트 구현보다 오래 유지될 수 있는
+계층을 우선합니다. 각 계층은 한 가지 책임을 가지며 다음 계층에서 소비됩니다.
+
+## 흐름
+
+| 계층 | 소스 | 산출물 | 책임 |
+| --- | --- | --- | --- |
+| Tokens | DTCG JSON | CSS variables, flat JSON | 시각 결정의 이름과 값 |
+| CSS | foundations, layouts, recipes | framework-neutral stylesheet | 의미 있는 HTML의 표현 |
+| Fixtures | neutral text module | Storybook example data | 공개 예시의 비식별성 |
+| Stories | HTML stories | interactive catalog | 상태와 반응형 조합 |
+| Docs | MDX guidance | public documentation | 사용 기준과 접근성 설명 |
+
+## 패키지 경계
+
+`@interface-library/tokens`는 토큰 원본과 생성된 CSS·JSON을 제공합니다.
+`@interface-library/css`는 토큰 패키지에 의존하며 foundation, layout,
+component layer를 하나의 stylesheet로 노출합니다.
+
+Storybook과 문서 앱은 배포 패키지가 아닙니다. 두 앱은 공개 API를 실제로
+소비하는 참조 구현이자 검토 표면입니다.
+
+## 소비 순서
+
+```css
+@import '@interface-library/tokens/tokens.css';
+@import '@interface-library/css/styles.css';
+```
+
+전체 CSS 진입점은 토큰을 함께 불러오므로 일반적인 사용에서는 두 번째 import
+하나만 필요합니다. 토큰만 필요한 환경에서는 첫 번째 진입점을 사용합니다.

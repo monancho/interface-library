@@ -1,10 +1,19 @@
 # Interface Library
 
-Interface Library is a small, framework-neutral foundation for content-led interfaces.
-It packages design tokens, CSS foundations, and reusable markup recipes with
-Storybook examples and public documentation.
+Interface Library is a framework-neutral design foundation for content-led
+interfaces. It turns semantic design decisions into portable tokens, CSS
+recipes, composable examples, and public guidance.
 
 Package publication remains disabled until the release contents are approved.
+
+## What it demonstrates
+
+- DTCG design tokens transformed into CSS custom properties and flat JSON
+- Cascade-layered foundations, responsive layouts, and component recipes
+- Accessible form, status, navigation, and content patterns
+- Isolated states and complete compositions in Storybook
+- A public Starlight knowledge base covering architecture and usage decisions
+- Neutral fixtures with no organization, product, customer, or source identity
 
 ## Workspace
 
@@ -14,6 +23,30 @@ Package publication remains disabled until the release contents are approved.
 - `apps/storybook`: component catalog and design review surface
 - `apps/docs`: Starlight documentation site
 
+## Pattern set
+
+| Area | Patterns |
+| --- | --- |
+| Layout | Container, Stack, SplitLayout, BorderGrid, Divider |
+| Actions | ActionLink, Button, CallToAction |
+| Content | SectionHeader, ContentCard, IndexList |
+| Forms | FormField, Checkbox |
+| State and navigation | StatusMessage, InlineNav |
+
+The Storybook `Examples` section combines these primitives into a content
+overview and a complete form flow without adding service-specific behavior.
+
+## Architecture
+
+```text
+DTCG tokens ──→ generated CSS / JSON
+      │
+      └───────→ CSS foundations / layouts / recipes
+                           │
+                           ├──→ Storybook states and compositions
+                           └──→ public documentation and guidance
+```
+
 ## Commands
 
 ```sh
@@ -21,6 +54,9 @@ corepack pnpm install
 corepack pnpm build:tokens
 corepack pnpm storybook
 corepack pnpm docs
+corepack pnpm check
+corepack pnpm test
+corepack pnpm build
 ```
 
 ## Public-content policy

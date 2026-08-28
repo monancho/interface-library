@@ -24,6 +24,8 @@ const preview = {
             'SectionHeader',
             'CallToAction',
           ],
+          'Examples',
+          ['ContentOverview', 'FormFlow'],
         ],
       },
     },
