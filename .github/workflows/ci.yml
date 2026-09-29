@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Node.js ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node:
+          - 22
+          - 24
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Verify pinned pnpm
+        run: corepack pnpm@10.17.1 --version
+
+      - name: Find pnpm store
+        id: pnpm-cache
+        shell: bash
+        run: echo "store-path=$(corepack pnpm@10.17.1 store path --silent)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.store-path }}
+          key: ${{ runner.os }}-node-${{ matrix.node }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ matrix.node }}-pnpm-
+
+      - name: Install dependencies
+        run: corepack pnpm@10.17.1 install --frozen-lockfile
+
+      - name: Check
+        run: corepack pnpm@10.17.1 check
+
+      - name: Test
+        run: corepack pnpm@10.17.1 test
+
+      - name: Build
+        run: corepack pnpm@10.17.1 build
